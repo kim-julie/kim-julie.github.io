@@ -15,6 +15,20 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  // Tap-to-spin for the hero cube (hover already handles desktop)
+  var cubeStage = document.querySelector('.cube-stage');
+  if (cubeStage) {
+    cubeStage.addEventListener('click', function () {
+      cubeStage.classList.toggle('spinning');
+    });
+    cubeStage.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        cubeStage.classList.toggle('spinning');
+      }
+    });
+  }
+
   // Gentle draw-in for the hero chart lines (respects reduced motion)
   var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (!prefersReduced) {

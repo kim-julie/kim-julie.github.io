@@ -179,6 +179,73 @@ a { color: inherit; }
 
 .hero .wrap { position: relative; z-index: 1; }
 
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 0.8fr;
+  gap: 40px;
+  align-items: center;
+}
+
+/* ============================================================
+   3D rotating data cube (hero graphic)
+   ============================================================ */
+.cube-stage {
+  perspective: 900px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+}
+.cube {
+  width: 150px;
+  height: 150px;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: rotateX(-24deg) rotateY(35deg);
+  transition: transform 0.6s ease;
+}
+.cube-stage:hover .cube,
+.cube-stage.spinning .cube {
+  animation: cube-spin 9s linear infinite;
+}
+@keyframes cube-spin {
+  from { transform: rotateX(-24deg) rotateY(35deg); }
+  to   { transform: rotateX(-24deg) rotateY(395deg); }
+}
+.cube-face {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border: 1px solid rgba(22,35,63,0.3);
+  background-color: var(--paper-raise);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px;
+}
+.cube-face svg { width: 100%; height: 100%; }
+.cube-face.front  { background-color: var(--paper-raise); transform: translateZ(75px); }
+.cube-face.back   { background-color: var(--paper-raise); transform: rotateY(180deg) translateZ(75px); }
+.cube-face.right  { background-color: var(--paper-raise); transform: rotateY(90deg) translateZ(75px); }
+.cube-face.left   { background-color: var(--paper-raise); transform: rotateY(-90deg) translateZ(75px); }
+.cube-face.top    { background-color: var(--paper-raise); transform: rotateX(90deg) translateZ(75px); }
+.cube-face.bottom { background-color: var(--paper-raise); transform: rotateX(-90deg) translateZ(75px); }
+
+.cube-caption {
+  margin-top: 18px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--muted);
+  text-align: center;
+  background: var(--paper);
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+.cube-caption em { font-style: italic; color: var(--gold); }
+
 .eyebrow {
   font-family: var(--font-mono);
   font-size: 0.8rem;
@@ -254,11 +321,11 @@ a { color: inherit; }
   font-family: var(--font-heavy);
   font-weight: 900;
   text-transform: uppercase;
-  line-height: 0.92;
+  line-height: 0.96;
   letter-spacing: -0.015em;
   margin: 0 0 28px;
   color: var(--ink);
-  font-size: clamp(2.6rem, 7vw, 5.2rem);
+  font-size: clamp(2.2rem, 4.4vw, 3.6rem);
 }
 .headline-big .accent {
   font-family: var(--font-display);
@@ -357,12 +424,26 @@ a { color: inherit; }
   border: 1px solid var(--line);
   border-radius: 10px;
   padding: 28px;
+  overflow: hidden;
   transition: transform 0.18s ease, box-shadow 0.18s ease;
 }
 .case-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow);
 }
+.case-visual {
+  width: 84px;
+  height: 56px;
+  margin: 0 0 16px;
+  transform: rotate(-6deg);
+  transition: transform 0.25s ease;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--paper);
+  padding: 6px 8px;
+}
+.case-card:hover .case-visual { transform: rotate(0deg); }
+.case-visual svg { width: 100%; height: 100%; display: block; }
 .case-eyebrow {
   font-family: var(--font-mono);
   font-size: 0.7rem;
@@ -735,6 +816,16 @@ a { color: inherit; }
 @media (max-width: 760px) {
   .interests-grid { grid-template-columns: 1fr; }
   .contact-grid { grid-template-columns: 1fr; }
+  .hero-grid { grid-template-columns: 1fr; }
+  .cube-stage { order: -1; margin-bottom: 8px; }
+  .cube { width: 110px; height: 110px; }
+  .cube-face { width: 110px; height: 110px; }
+  .cube-face.front, .cube-face.back { transform: translateZ(55px); }
+  .cube-face.back { transform: rotateY(180deg) translateZ(55px); }
+  .cube-face.right { transform: rotateY(90deg) translateZ(55px); }
+  .cube-face.left { transform: rotateY(-90deg) translateZ(55px); }
+  .cube-face.top { transform: rotateX(90deg) translateZ(55px); }
+  .cube-face.bottom { transform: rotateX(-90deg) translateZ(55px); }
   .case-grid { grid-template-columns: 1fr; }
   .cta-grid { grid-template-columns: 1fr; gap: 40px; }
   .section-head { flex-direction: column; align-items: flex-start; gap: 8px; }
