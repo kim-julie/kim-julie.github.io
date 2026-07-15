@@ -7,7 +7,7 @@
 <meta name="description" content="Full curriculum vitae for Julie Sojin Kim: education, awards, research experience, teaching, and references.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;900&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500;1,9..144,600&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -15,16 +15,19 @@
 
 <header class="site-header">
   <div class="wrap">
-    <a class="brand" href="index.html">Julie Sojin Kim<span>.</span></a>
-    <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav">Menu</button>
-    <nav class="main-nav" id="main-nav">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="publications.html">Publications</a></li>
-        <li><a href="cv.html" aria-current="page">CV</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
+    <a class="brand" href="index.html">Julie<span class="dot">.</span><span class="brand-italic">Kim</span></a>
+    <div class="header-right">
+      <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav">Menu</button>
+      <nav class="main-nav" id="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="publications.html">Publications</a></li>
+          <li><a href="cv.html" aria-current="page">CV</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <a class="nav-cta" href="assets/cv/Julie_Sojin_Kim_CV.pdf">↓ Download CV</a>
+    </div>
   </div>
 </header>
 
@@ -34,12 +37,13 @@
     <div class="wrap">
       <div class="cv-toolbar">
         <div>
-          <p class="eyebrow">Curriculum Vitae</p>
+          <p class="eyebrow">Curriculum Vitae · Statistical Demographer</p>
           <h1 style="font-family:var(--font-display); font-size:clamp(2rem,4vw,2.6rem); margin:0;">Julie Sojin Kim</h1>
         </div>
         <a class="btn btn-primary" href="assets/cv/Julie_Sojin_Kim_CV.pdf">Download PDF</a>
       </div>
       <nav class="cv-subnav" aria-label="CV sections">
+        <a href="#interests">Research Interests</a>
         <a href="#education">Education</a>
         <a href="#awards">Awards &amp; Funding</a>
         <a href="#experience">Research Experience</a>
@@ -49,9 +53,25 @@
     </div>
   </section>
 
+  <section class="section section-alt" id="interests" aria-labelledby="interests-h">
+    <div class="wrap">
+      <div class="section-head"><h2 id="interests-h" class="mixed-heading"><span class="mh-bold">Research</span> <span class="mh-italic">interests</span></h2></div>
+      <div class="interests-grid">
+        <div class="interest-card">
+          <h3>Substantive</h3>
+          <p>Demography, population forecasting, population health metrics, and health inequity.</p>
+        </div>
+        <div class="interest-card">
+          <h3>Methods</h3>
+          <p>Demographic methods, Bayesian hierarchical modeling, small-area estimation, survey design and analysis, and time-series forecasting.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="section" id="education" aria-labelledby="education-h">
     <div class="wrap">
-      <div class="section-head"><h2 id="education-h">Education</h2></div>
+      <div class="section-head"><h2 id="education-h" class="mixed-heading"><span class="mh-bold">Education</span></h2></div>
       <ul class="timeline">
         <li>
           <span class="tl-date">2021 – 2026</span>
@@ -77,7 +97,7 @@
 
   <section class="section section-alt" id="awards" aria-labelledby="awards-h">
     <div class="wrap">
-      <div class="section-head"><h2 id="awards-h">Scholarships, grants &amp; awards</h2></div>
+      <div class="section-head"><h2 id="awards-h" class="mixed-heading"><span class="mh-bold">Scholarships, grants &amp;</span> <span class="mh-italic">awards</span></h2></div>
       <table class="data-table">
         <thead>
           <tr><th>Award</th><th>Amount</th><th>Year</th></tr>
@@ -125,10 +145,16 @@
 
   <section class="section" id="experience" aria-labelledby="experience-h">
     <div class="wrap">
-      <div class="section-head"><h2 id="experience-h">Relevant research experience</h2></div>
+      <div class="section-head"><h2 id="experience-h" class="mixed-heading"><span class="mh-bold">Relevant research</span> <span class="mh-italic">experience</span></h2></div>
       <ul class="timeline">
         <li>
-          <span class="tl-date">2021 – present</span>
+          <span class="tl-date">2026 – present</span>
+          <p class="tl-org">Stanford University</p>
+          <p class="tl-loc">Stanford, CA <!-- TODO: add department/lab --></p>
+          <p class="tl-detail">Postdoctoral Fellow</p>
+        </li>
+        <li>
+          <span class="tl-date">2021 – 2026</span>
           <p class="tl-org">Institute for Health Metrics and Evaluation</p>
           <p class="tl-loc">Seattle, WA</p>
           <p class="tl-detail">Future Health Scenarios and US Health Disparities team</p>
@@ -185,7 +211,7 @@
 
   <section class="section section-alt" id="teaching" aria-labelledby="teaching-h">
     <div class="wrap">
-      <div class="section-head"><h2 id="teaching-h">Teaching experience</h2></div>
+      <div class="section-head"><h2 id="teaching-h" class="mixed-heading"><span class="mh-bold">Teaching</span> <span class="mh-italic">experience</span></h2></div>
       <p class="lede">All positions held at the University of Washington.</p>
       <table class="data-table">
         <thead>
@@ -203,7 +229,7 @@
 
   <section class="section" id="references" aria-labelledby="references-h">
     <div class="wrap">
-      <div class="section-head"><h2 id="references-h">Professional references</h2></div>
+      <div class="section-head"><h2 id="references-h" class="mixed-heading"><span class="mh-bold">Professional</span> <span class="mh-italic">references</span></h2></div>
       <ul class="reflist">
         <li>
           <p class="ref-name">Laura Dwyer-Lindgren</p>
@@ -235,7 +261,7 @@
 <footer class="site-footer">
   <div class="wrap">
     <span>© 2026 Julie Sojin Kim</span>
-    <span><a href="mailto:sojink@uw.edu">sojink@uw.edu</a> · <a href="https://www.linkedin.com/in/kimjulie20" target="_blank" rel="noopener">LinkedIn</a></span>
+    <span><a href="mailto:sojink@uw.edu">sojink [at] uw [dot] edu</a> · <a href="https://www.linkedin.com/in/kimjulie20" target="_blank" rel="noopener">LinkedIn</a></span>
   </div>
 </footer>
 
