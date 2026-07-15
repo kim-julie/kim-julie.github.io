@@ -250,11 +250,11 @@ a { color: inherit; }
 
 .drag-arrow {
   position: absolute;
-  top: -46px;
+  top: -32px;
   left: 50%;
-  margin-left: 30px;
-  width: 54px;
-  height: 54px;
+  margin-left: 22px;
+  width: 36px;
+  height: 36px;
   color: var(--muted);
   opacity: 0.75;
   pointer-events: none;
@@ -266,13 +266,13 @@ a { color: inherit; }
 }
 
 .cube-caption {
-  margin-top: 18px;
+  margin-top: 14px;
   font-family: var(--font-mono);
-  font-size: 0.78rem;
+  font-size: 0.64rem;
   color: var(--muted);
   text-align: center;
   background: var(--paper);
-  padding: 4px 10px;
+  padding: 3px 8px;
   border-radius: 4px;
 }
 .cube-caption em { font-style: italic; color: var(--gold); }
